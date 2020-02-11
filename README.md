@@ -5,7 +5,12 @@ Two different APIs are used, one for news and other for exchange rates.
 
 ![Showcase](appShowcase.gif)
 
+##Live demo
+
+https://brave-shockley-078a9d.netlify.com/
+
 ##APIs used
 
 News API : https://newsapi.org/
+
 HNB exchange lookup api: http://hnbex.eu/api/v1/
