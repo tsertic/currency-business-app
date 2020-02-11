@@ -6,7 +6,7 @@ import DataContext from '../../context/data/dataContext';
 import AllCurrencyTable from './AllCurrencyTable/AllCurrencyTable';
 import SingleCurrencyTable from './SingleCurrencyTable/SingleCurrencyTable';
 import LineChart from './LineChart/LineChart';
-import Filter from '../Dashboard/Filter/Filter';
+import Filter from './Filter/Filter';
 
 const DataContent = () => {
   //context

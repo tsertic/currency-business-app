@@ -5,15 +5,19 @@ const Headline = () => {
   const newsContext = useContext(NewsContext);
 
   const { headlineNews } = newsContext;
-  console.log(newsContext);
+
   return (
     <Fragment>
       <div className={styles.header}>Trending News</div>
       {headlineNews ? (
         <div className={styles.Headline}>
           <div className={styles.Headline__img}>
-            <img src={headlineNews.urlToImage} />
-            <a href={headlineNews.url} target="_blank">
+            <img src={headlineNews.urlToImage} alt=" relevant to title" />
+            <a
+              href={headlineNews.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Visit full article
             </a>
           </div>

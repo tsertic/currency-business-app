@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     loadNews();
-    console.log('ucitavam');
+    //eslint-disable-next-line
   }, []);
 
   return (

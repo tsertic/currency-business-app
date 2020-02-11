@@ -9,13 +9,13 @@ const PageNavigation = props => {
   return (
     <div className={styles.PageNavigation}>
       <button onClick={() => changePage(-1)}>
-        <i class="fas fa-chevron-left"></i>
+        <i className="fas fa-chevron-left"></i>
       </button>
       <span>
         Page {currentPage}/{numOfPages}
       </span>
       <button onClick={() => changePage(1)}>
-        <i class="fas fa-chevron-right"></i>
+        <i className="fas fa-chevron-right"></i>
       </button>
     </div>
   );

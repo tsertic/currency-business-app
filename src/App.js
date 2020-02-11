@@ -8,7 +8,6 @@ import DataState from './context/data/DataState';
 import NewsState from './context/news/NewsState';
 
 const App = () => {
-  console.log(process.env.REACT_APP_NEWS_API_KEY);
   return (
     <DataState>
       <NewsState>

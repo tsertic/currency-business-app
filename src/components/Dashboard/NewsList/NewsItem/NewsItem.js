@@ -4,7 +4,6 @@ import NewsContext from '../../../../context/news/newsContext';
 const NewsItem = ({ newsArticle }) => {
   const newsContext = useContext(NewsContext);
   const { loadHeadlineNews } = newsContext;
-  console.log(newsArticle);
 
   return (
     <div
@@ -12,7 +11,7 @@ const NewsItem = ({ newsArticle }) => {
       onClick={() => loadHeadlineNews(newsArticle)}
     >
       <div className={styles.image}>
-        <img src={newsArticle.urlToImage} />
+        <img src={newsArticle.urlToImage} alt="relevant to title" />
       </div>
       <div className={styles.title}>
         <p>{newsArticle.title}</p>

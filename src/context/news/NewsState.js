@@ -3,7 +3,6 @@ import axios from 'axios';
 import NewsContext from './newsContext';
 import newsReducer from './newsReducer';
 import { newsTypes } from './../types';
-import { newsApiKey } from '../../apiKeys';
 
 const NewsState = props => {
   const initialState = {
@@ -17,21 +16,15 @@ const NewsState = props => {
 
   //load news
   const loadNews = async (page = 1) => {
-    let apiKey;
-    if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
-      // dev code
-      apiKey = newsApiKey;
-    } else {
-      // production code
-      apiKey = process.env.REACT_APP_NEWS_API_KEY;
-    }
+    let apiKey = process.env.REACT_APP_NEWS_API_KEY;
+
     const urlAdress = `https://newsapi.org/v2/everything?q=(currencies)AND(currency)AND(economy)&page=${page}&pageSize=4`;
     const config = {
       headers: { 'X-Api-Key': apiKey }
     };
 
     const res = await axios(urlAdress, config);
-    console.log(res.data);
+
     if (!state.headlineNews) loadHeadlineNews(res.data.articles[0]);
     dispatch({ type: newsTypes.LOAD_NEWS, payload: [res.data, page] });
   };
