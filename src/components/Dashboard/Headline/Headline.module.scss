@@ -61,3 +61,17 @@
     padding: 0 6px;
   }
 }
+
+@media (max-width: 600px) {
+  .Headline {
+    margin-bottom: 35px;
+
+    .description {
+      font-size: 0.8em;
+    }
+
+    a {
+      font-size: 0.8em;
+    }
+  }
+}

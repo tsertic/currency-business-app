@@ -1,6 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import styles from './Headline.module.scss';
 import NewsContext from '../../../context/news/newsContext';
+import Spinner from './../../UI/Spinner/Spinner';
 const Headline = () => {
   const newsContext = useContext(NewsContext);
 
@@ -27,7 +28,7 @@ const Headline = () => {
           </div>
         </div>
       ) : (
-        <div>Ucitava se</div>
+        <Spinner />
       )}
     </Fragment>
   );

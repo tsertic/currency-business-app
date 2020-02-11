@@ -5,7 +5,8 @@ export default (state, action) => {
     case dataTypes.LOAD_DATA:
       return {
         ...state,
-        exchangeData: action.payload
+        exchangeData: action.payload,
+        loading: false
       };
     case dataTypes.LOAD_GRAPH_DATA:
       return {

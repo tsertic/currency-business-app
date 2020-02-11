@@ -9,20 +9,22 @@ const NewsState = props => {
     news: [],
     headlineNews: null,
     currentPage: 1,
-    numOfPages: 20
+    numOfPages: 20,
+    loading: false
   };
 
   const [state, dispatch] = useReducer(newsReducer, initialState);
 
   //load news
   const loadNews = async (page = 1) => {
+    state.loading = true;
+
     let apiKey = process.env.REACT_APP_NEWS_API_KEY;
 
     const urlAdress = `https://newsapi.org/v2/everything?q=(currencies)AND(currency)AND(economy)&page=${page}&pageSize=4`;
     const config = {
       headers: { 'X-Api-Key': apiKey }
     };
-
     const res = await axios(urlAdress, config);
 
     if (!state.headlineNews) loadHeadlineNews(res.data.articles[0]);
@@ -54,6 +56,7 @@ const NewsState = props => {
         headlineNews: state.headlineNews,
         currentPage: state.currentPage,
         numOfPages: state.numOfPages,
+        loading: state.loading,
         loadNews,
         loadHeadlineNews,
         changePage

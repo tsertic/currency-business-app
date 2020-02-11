@@ -19,7 +19,8 @@ const DataState = props => {
     currentCurr: 'daily',
     currentDate: '',
     availableCurrencies: [],
-    lastXDays: 7
+    lastXDays: 7,
+    loading: false
   };
 
   const [state, dispatch] = useReducer(dataReducer, initialState);
@@ -29,6 +30,8 @@ const DataState = props => {
     curr = state.currentCurr,
     date = state.currentDate
   ) => {
+    state.loading = true;
+
     //if there is no date it will load on current day
     if (date) {
       date = `?date=${formatDate(date)}`;
@@ -106,7 +109,7 @@ const DataState = props => {
         exchangeData: state.exchangeData,
         currentCurr: state.currentCurr,
         graphData: state.graphData,
-        loadingData: state.loadingData,
+        loading: state.loading,
         availableCurrencies: state.availableCurrencies,
         loadData,
         loadSingleCurrencyData,

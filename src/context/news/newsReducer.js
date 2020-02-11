@@ -5,6 +5,7 @@ export default (state, action) => {
     case newsTypes.LOAD_NEWS:
       return {
         ...state,
+        loading: false,
         news: action.payload[0].articles,
         currentPage: action.payload[1]
       };

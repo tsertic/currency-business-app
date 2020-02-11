@@ -1,13 +1,14 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, Fragment } from 'react';
 import styles from './AllCurrencyTable.module.scss';
 import DatePicker from 'react-datepicker';
 
 import DataContext from '../../../context/data/dataContext';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const AllCurrencyTable = () => {
   //context
   const dataContext = useContext(DataContext);
-  const { exchangeData, loadData } = dataContext;
+  const { exchangeData, loadData, loading } = dataContext;
   //state
   const [startDate, setStartDate] = useState(new Date());
 
@@ -48,29 +49,35 @@ const AllCurrencyTable = () => {
   });
 
   return (
-    <section className={styles.AllCurrencyTable}>
-      <table className="table table-condensed table-hover table-bordered">
-        <caption>
-          Exchange rates on date:{' '}
-          <DatePicker
-            showPopperArrow={false}
-            selected={startDate}
-            onChange={handleChangeDate}
-            maxDate={new Date()}
-          />
-        </caption>
-        <thead>
-          <tr>
-            <th>Currency</th>
-            <th>Unit Value</th>
-            <th>Buying rate</th>
-            <th>Median rate</th>
-            <th>Selling rate</th>
-          </tr>
-        </thead>
-        <tbody>{renderTable}</tbody>
-      </table>
-    </section>
+    <Fragment>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <section className={styles.AllCurrencyTable}>
+          <table className="table table-condensed table-hover table-bordered">
+            <caption>
+              Exchange rates on date:{' '}
+              <DatePicker
+                showPopperArrow={false}
+                selected={startDate}
+                onChange={handleChangeDate}
+                maxDate={new Date()}
+              />
+            </caption>
+            <thead>
+              <tr>
+                <th>Currency</th>
+                <th>Unit Value</th>
+                <th>Buying rate</th>
+                <th>Median rate</th>
+                <th>Selling rate</th>
+              </tr>
+            </thead>
+            <tbody>{renderTable}</tbody>
+          </table>
+        </section>
+      )}
+    </Fragment>
   );
 };
 
