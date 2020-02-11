@@ -1,0 +1,15 @@
+.App {
+  margin: 0 auto;
+  padding-top: 10px;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 930px) {
+  .App {
+    padding-top: 6px;
+    flex-direction: column;
+  }
+}

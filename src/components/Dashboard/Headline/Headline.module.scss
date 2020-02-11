@@ -1,0 +1,63 @@
+.header {
+  font-size: 2.4em;
+  border-bottom: 2px solid gray;
+  margin-bottom: 10px;
+}
+
+.Headline {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+  height: 200px;
+  .Headline__img {
+    position: relative;
+    width: 40%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    img {
+      height: 170px;
+      width: 100%;
+    }
+    a {
+      margin-top: 1px;
+      text-decoration: none;
+      height: 30px;
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+      border: 1px solid gray;
+      outline: none;
+      color: #494949;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #ffffff;
+      border: 2px solid #494949 !important;
+      transition: all 0.4s ease 0s;
+
+      &:hover {
+        color: #ffffff !important;
+        background: #494949;
+        border-color: #494949 !important;
+        transition: all 0.4s ease 0s;
+      }
+    }
+  }
+  .content {
+    width: 60%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .description {
+    text-align: justify;
+    font-size: 1em;
+    padding: 0 6px;
+  }
+}

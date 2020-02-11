@@ -1,0 +1,22 @@
+.PageNavigation {
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  width: 140px;
+  border-bottom: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 0 10px;
+    i {
+      font-size: 1.2em;
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+}
